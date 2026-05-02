@@ -1,0 +1,106 @@
+version: '3.8'
+
+services:
+  # Nginx 网关
+  nginx:
+    image: nginx:alpine
+    container_name: wuziqi-nginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./frontend:/var/www/html:ro
+    depends_on:
+      - auth-service
+      - match-service
+      - game-service
+    networks:
+      - wuziqi-net
+
+  # 认证服务
+  auth-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.auth
+    container_name: wuziqi-auth
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=wuziqi123
+      - MYSQL_DATABASE=wuziqi
+    depends_on:
+      - redis
+      - mysql
+    networks:
+      - wuziqi-net
+    restart: unless-stopped
+
+  # 匹配服务
+  match-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.match
+    container_name: wuziqi-match
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - GAME_SERVICE_URL=http://game-service:8003
+    depends_on:
+      - redis
+    networks:
+      - wuziqi-net
+    restart: unless-stopped
+
+  # 游戏服务
+  game-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.game
+    container_name: wuziqi-game
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AUTH_SERVICE_URL=http://auth-service:8001
+    depends_on:
+      - redis
+    networks:
+      - wuziqi-net
+    restart: unless-stopped
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    container_name: wuziqi-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - wuziqi-net
+    restart: unless-stopped
+
+  # MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: wuziqi-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=wuziqi123
+      - MYSQL_DATABASE=wuziqi
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - wuziqi-net
+    restart: unless-stopped
+
+networks:
+  wuziqi-net:
+    driver: bridge
+
+volumes:
+  redis-data:
+  mysql-data:

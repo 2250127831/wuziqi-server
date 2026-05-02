@@ -1,0 +1,306 @@
+nohup: 忽略输入
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[2026-04-21 01:11:56.609] [INFO ] ========== auth-service 启动 ==========
+[2026-04-21 01:11:56.609] [INFO ] 监听端口: 8001
+[2026-04-21 01:11:56.609] [INFO ] 创建线程池，线程数: 8
+[2026-04-21 01:11:56.609] [INFO ] 初始化 Redis 连接池: 127.0.0.1:6379, 大小: 16
+[2026-04-21 01:11:56.611] [INFO ] Redis 连接池初始化成功
+[2026-04-21 01:11:56.611] [INFO ] 初始化 MySQL 连接池: 127.0.0.1:3306/wuziqi, 大小: 8
+[2026-04-21 01:11:56.652] [INFO ] MySQL 连接池初始化成功
+[2026-04-21 01:11:56.653] [INFO ] auth-service 初始化完成
+[2026-04-21 01:11:56.653] [INFO ] auth-service 已启动，监听 :8001
+[2026-04-21 01:11:59.142] [DEBUG] 收到请求: GET /health HTTP/1.1
+Host: 127.0.0.1
+Accept: */*
+
+
+[2026-04-21 01:11:59.143] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 46
+Accept: */*
+Content-Type: application/json
+
+{"username":"test_user1","password":"tes
+[2026-04-21 01:11:59.144] [INFO ] 用户登录成功: username=test_user1, user_id=9
+[2026-04-21 01:11:59.145] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 46
+Accept: */*
+Content-Type: application/json
+
+{"username":"test_user2","password":"tes
+[2026-04-21 01:11:59.145] [INFO ] 用户登录成功: username=test_user2, user_id=10
+[2026-04-21 01:11:59.146] [DEBUG] 收到请求: POST /api/register HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username
+[2026-04-21 01:11:59.146] [DEBUG] 注册请求 body: {
+	"password" : "test123",
+	"username" : "test_user1"
+}
+[2026-04-21 01:11:59.147] [DEBUG] 收到请求: POST /api/register HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username
+[2026-04-21 01:11:59.147] [DEBUG] 注册请求 body: {
+	"password" : "test123",
+	"username" : "test_user2"
+}
+[2026-04-21 01:11:59.147] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username" :
+[2026-04-21 01:11:59.148] [INFO ] 用户登录成功: username=test_user1, user_id=9
+[2026-04-21 01:11:59.148] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username" :
+[2026-04-21 01:11:59.149] [INFO ] 用户登录成功: username=test_user2, user_id=10
+[2026-04-21 01:11:59.149] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:11:59.150] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:11:59.151] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:11:59.151] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:11:59.152] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username" :
+[2026-04-21 01:11:59.153] [INFO ] 用户登录成功:[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+ username=test_user1, user_id=9
+[2026-04-21 01:11:59.154] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username" :
+[2026-04-21 01:11:59.154] [INFO ] 用户登录成功: username=test_user2, user_id=10
+[2026-04-21 01:11:59.155] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:11:59.155] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:11:59.974] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1:8001
+Accept: */*
+Content-Type: application/json
+Content-Length: 183
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE3Nzcz
+[2026-04-21 01:12:00.175] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1:8001
+Accept: */*
+Content-Type: application/json
+Content-Length: 183
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNzc3
+[2026-04-21 01:16:24.069] [DEBUG] 收到请求: GET /health HTTP/1.1
+Host: 127.0.0.1
+Accept: */*
+
+
+[2026-04-21 01:16:24.071] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 46
+Accept: */*
+Content-Type: application/json
+
+{"username":"test_user1","password":"tes
+[2026-04-21 01:16:24.071] [INFO ] 用户登录成功: username=test_user1, user_id=9
+[2026-04-21 01:16:24.072] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 46
+Accept: */*
+Content-Type: application/json
+
+{"username":"test_user2","password":"tes
+[2026-04-21 01:16:24.073] [INFO ] 用户登录成功: username=test_user2, user_id=10
+[2026-04-21 01:16:24.073] [DEBUG] 收到请求: POST /api/register HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username
+[2026-04-21 01:16:24.073] [DEBUG] 注册请求 body: {
+	"password" : "test123",
+	"username" : "test_user1"
+}
+[2026-04-21 01:16:24.075] [DEBUG] 收到请求: POST /api/register HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username
+[2026-04-21 01:16:24.075] [DEBUG] 注册请求 body: {
+	"password" : "test123",
+	"username" : "test_user2"
+}
+[2026-04-21 01:16:24.076] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username" :
+[2026-04-21 01:16:24.076] [INFO ] 用户登录成功: username=test_user1, user_id=9
+[2026-04-21 01:16:24.078] [DEBUG] 收到请求: POST /api/login HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 55
+Accept: */*
+Content-Type: application/json
+
+{
+	"password" : "test123",
+	"username" :
+[2026-04-21 01:16:24.079] [INFO ] 用户登录成功: username=test_user2, user_id=10
+[2026-04-21 01:16:24.079] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:16:24.081] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Host: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Forwarded-For: 127.0.0.1
+Content-Length: 183
+Accept: */*
+Content-Type: application/json
+
+{
+	"token" : "eyJhbGciOiJIUzI1NiIsInR5
+[2026-04-21 01:16:24.082] [DEBUG] 收到请求: POST /api/verify HTTP/1.1
+Hos[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
+[DEBUG] Guard析构, conn=0x5e94c793e0d0, pool_=0x5e94c77a9580
